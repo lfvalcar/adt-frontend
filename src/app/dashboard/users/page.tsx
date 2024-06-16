@@ -24,8 +24,8 @@ export const UsersPage = () => {
   const [users, setUsers] = useState([]);
   
   const token = getCookie('token');
-  if(token){
-    useEffect(() => {
+  useEffect(() => {
+    if(token){
       const fetchUsers = async () => {
         if(filter === ''){
           const result = await dataUsers.getAll(token);
@@ -35,12 +35,10 @@ export const UsersPage = () => {
           setUsers(result);
         }
       };
-  
       fetchUsers();
-    }, [token]);
-  }else{
-    window.location.href = (`${appConfig.url}/login`);
-  }
+    }else{
+      window.location.href = (`${appConfig.url}/login`);
+    }}, [token]);
 
   if(typeof(users) === 'string' || users === null){
     return (

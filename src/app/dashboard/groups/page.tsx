@@ -24,23 +24,22 @@ export const GroupsPage = () => {
   const [groups, setGroups] = useState([]);
   const token = getCookie('token');
 
-  if(token){
-    useEffect(() => {
+  useEffect(() => {
+    if(token){
       const fetchGroups = async () => {
-        if(filter === ''){
-          const result = await dataGroups.getAll(token);
-          setGroups(result);
-        }else{
-          const result = await dataGroups.getFilter(token,filter);
-          setGroups(result);
-        }
+      if(filter === ''){
+        const result = await dataGroups.getAll(token);
+        setGroups(result);
+      }else{
+        const result = await dataGroups.getFilter(token,filter);
+        setGroups(result);
+      }
       };
-  
+
       fetchGroups();
-    }, [token]);
-  }else{
-    window.location.href = (`${appConfig.url}/login`);
-  }
+    }else{
+      window.location.href = (`${appConfig.url}/login`);
+    }}, [token]);
 
   if(typeof(groups) === 'string' || groups === null){
     return (
