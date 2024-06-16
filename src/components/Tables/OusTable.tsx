@@ -120,8 +120,7 @@ export const OusTable:FC<Props> = ({rows, columns}) => {
     selectedKeysArray,
     visibleColumns,
     rows.length,
-    selectedKeys,
-    rows.length,
+    selectedKeys
   ]);
 
   return (

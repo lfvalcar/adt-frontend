@@ -120,8 +120,7 @@ export const UsersTable:FC<Props> = ({rows, columns}) => {
     selectedKeysArray,
     visibleColumns,
     rows.length,
-    selectedKeys,
-    rows.length
+    selectedKeys
   ]);
 
   return (

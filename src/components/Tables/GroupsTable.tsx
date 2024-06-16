@@ -126,7 +126,6 @@ export const GroupsTable:FC<Props> = ({rows, columns}) => {
     selectedKeysArray,
     columns,
     visibleColumns,
-    rows.length,
     selectedKeys,
     rows.length
   ]);
