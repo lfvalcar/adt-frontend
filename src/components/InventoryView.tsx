@@ -8,7 +8,7 @@ import { Iventory } from "@/interfaces/inventory.interface";
 
 interface Props {
   fields: IColumn[]
-  entry?: Iventory
+  entry: Iventory | null
 }
 
 const InventoryView:FC<Props> = ({fields,entry}) => {
@@ -66,13 +66,13 @@ const InventoryView:FC<Props> = ({fields,entry}) => {
                   Características
                 </h3>
               </div>
-              {entry ? (
+              {entry != null ? (
                 <div className="p-7">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       {/* INICIO CAMPO */}
                       
                         {fields.map((field) => (
-                          <div>
+                          <>
                             <label
                             key={field.key}
                             className="m-2 mb-3 block text-sm font-medium text-black dark:text-white"
@@ -86,7 +86,7 @@ const InventoryView:FC<Props> = ({fields,entry}) => {
                                 {entry[field.key]}
                               </p>
                             </div>
-                          </div>
+                          </>
                         ))}
                       {/* FIN CAMPO */}
                     </div>

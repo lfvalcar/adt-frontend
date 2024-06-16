@@ -6,7 +6,7 @@ import ColumInventory from "@/interfaces/inventory.interface";
 export const InventoryPage = () => {
 
     return (
-      <InventoryView fields={ColumInventory}/>
+      <InventoryView fields={ColumInventory} entry={null}/>
     );
 }
 
