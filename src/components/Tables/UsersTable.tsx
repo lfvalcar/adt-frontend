@@ -40,8 +40,6 @@ export const UsersTable:FC<Props> = ({rows, columns}) => {
     direction: "ascending",
   });
 
-  const [page, setPage] = React.useState(1);
-
   const headerColumns = React.useMemo(() => {
     if (visibleColumns === "all") return columns;
 
@@ -123,8 +121,7 @@ export const UsersTable:FC<Props> = ({rows, columns}) => {
     visibleColumns,
     rows.length,
     selectedKeys,
-    rows.length,
-    page
+    rows.length
   ]);
 
   return (

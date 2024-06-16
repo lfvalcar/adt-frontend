@@ -40,8 +40,6 @@ export const OusTable:FC<Props> = ({rows, columns}) => {
     direction: "ascending",
   });
 
-  const [page, setPage] = React.useState(1);
-
   const headerColumns = React.useMemo(() => {
     if (visibleColumns === "all") return columns;
 
@@ -124,7 +122,6 @@ export const OusTable:FC<Props> = ({rows, columns}) => {
     rows.length,
     selectedKeys,
     rows.length,
-    page
   ]);
 
   return (
