@@ -6,7 +6,7 @@ import { getCookie } from "@/components/Cookies/Cookie";
 import dataInventory from "@/data/dataInventory";
 import { appConfig } from "@/config/appConfig";
 
-export const InventoryComputerPage = ({params: {computerName}}: {params: {computerName:string}}) => {
+const InventoryComputerPage = ({params: {computerName}}: {params: {computerName:string}}) => {
 
   const [entry, setEntry] = useState<any>([]);
 

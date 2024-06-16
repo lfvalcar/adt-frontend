@@ -3,7 +3,7 @@ import React from "react";
 import InventoryView from "@/components/InventoryView";
 import ColumInventory from "@/interfaces/inventory.interface";
 
-export const InventoryPage = () => {
+const InventoryPage = () => {
 
     return (
       <InventoryView fields={ColumInventory} entry={null}/>

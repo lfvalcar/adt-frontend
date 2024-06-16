@@ -9,7 +9,7 @@ import EmptyTable from "@/components/Tables/EmptyTable";
 import OusTable from "@/components/Tables/OusTable";
 import { appConfig } from "@/config/appConfig";
 
-export const OusPage = () => {
+const OusPage = () => {
   const params = useSearchParams()
 
   let filter = ''

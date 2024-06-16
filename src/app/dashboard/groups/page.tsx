@@ -9,7 +9,7 @@ import { useSearchParams } from 'next/navigation'
 import EmptyTable from "@/components/Tables/EmptyTable";
 import { appConfig } from "@/config/appConfig";
 
-export const GroupsPage = () => {
+const GroupsPage = () => {
   const params = useSearchParams()
 
   let filter = ''
