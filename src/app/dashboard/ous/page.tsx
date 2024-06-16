@@ -11,6 +11,7 @@ import { appConfig } from "@/config/appConfig";
 
 const OusPage = () => {
   const params = useSearchParams()
+  const [ous, setOus] = useState([]);
 
   let filter = ''
   params.forEach((value, key) => {
@@ -21,10 +22,8 @@ const OusPage = () => {
     }
   });
 
-  const [ous, setOus] = useState([]);
-  const token = getCookie('token');
-
   useEffect(() => {
+    const token = getCookie('token');
     if(token){
       const fetchOus = async () => {
         if(filter === ''){
@@ -38,7 +37,7 @@ const OusPage = () => {
       fetchOus();
     }else{
       window.location.href = (`${appConfig.url}/login`);
-    }}, [token]);
+    }}, [filter]);
 
   if(typeof(ous) === 'string' || ous === null){
     return (

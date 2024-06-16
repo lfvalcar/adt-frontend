@@ -46,7 +46,7 @@ export const OusTable:FC<Props> = ({rows, columns}) => {
     if (visibleColumns === "all") return columns;
 
     return columns.filter((column) => Array.from(visibleColumns).includes(column.key));
-  }, [visibleColumns]);
+  }, [visibleColumns,columns]);
 
   const sortedItems = React.useMemo(() => {
     return [...rows].sort((a: Ou, b: Ou) => {
@@ -118,6 +118,8 @@ export const OusTable:FC<Props> = ({rows, columns}) => {
       </div>
     );
   }, [
+    columns,
+    selectedKeysArray,
     visibleColumns,
     rows.length,
     selectedKeys,

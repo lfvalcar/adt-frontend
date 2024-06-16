@@ -46,7 +46,7 @@ export const GroupsTable:FC<Props> = ({rows, columns}) => {
     if (visibleColumns === "all") return columns;
 
     return columns.filter((column) => Array.from(visibleColumns).includes(column.key));
-  }, [visibleColumns]);
+  }, [visibleColumns,columns]);
 
   const sortedItems = React.useMemo(() => {
     return [...rows].sort((a: Group, b: Group) => {
@@ -125,6 +125,8 @@ export const GroupsTable:FC<Props> = ({rows, columns}) => {
       </div>
     );
   }, [
+    selectedKeysArray,
+    columns,
     visibleColumns,
     rows.length,
     selectedKeys,

@@ -9,8 +9,9 @@ import { useSearchParams } from 'next/navigation'
 import EmptyTable from "@/components/Tables/EmptyTable";
 import { appConfig } from "@/config/appConfig";
 
-export const UsersPage = () => {
+const UsersPage = () => {
   const params = useSearchParams()
+  const [users, setUsers] = useState([]);
 
   let filter = ''
   params.forEach((value, key) => {
@@ -20,11 +21,9 @@ export const UsersPage = () => {
       filter = filter + `&${key}=${value}`
     }
   });
-
-  const [users, setUsers] = useState([]);
   
-  const token = getCookie('token');
   useEffect(() => {
+    const token = getCookie('token');
     if(token){
       const fetchUsers = async () => {
         if(filter === ''){
@@ -38,7 +37,7 @@ export const UsersPage = () => {
       fetchUsers();
     }else{
       window.location.href = (`${appConfig.url}/login`);
-    }}, [token]);
+    }}, [filter]);
 
   if(typeof(users) === 'string' || users === null){
     return (

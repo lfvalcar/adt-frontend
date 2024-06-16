@@ -11,6 +11,7 @@ import { appConfig } from "@/config/appConfig";
 
 const GroupsPage = () => {
   const params = useSearchParams()
+  const [groups, setGroups] = useState([]);
 
   let filter = ''
   params.forEach((value, key) => {
@@ -21,10 +22,8 @@ const GroupsPage = () => {
     }
   });
 
-  const [groups, setGroups] = useState([]);
-  const token = getCookie('token');
-
   useEffect(() => {
+    const token = getCookie('token');
     if(token){
       const fetchGroups = async () => {
       if(filter === ''){
@@ -39,7 +38,7 @@ const GroupsPage = () => {
       fetchGroups();
     }else{
       window.location.href = (`${appConfig.url}/login`);
-    }}, [token]);
+    }},[filter]);
 
   if(typeof(groups) === 'string' || groups === null){
     return (

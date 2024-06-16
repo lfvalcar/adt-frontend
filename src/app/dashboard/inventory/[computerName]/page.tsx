@@ -10,13 +10,13 @@ const InventoryComputerPage = ({params: {computerName}}: {params: {computerName:
 
   const [entry, setEntry] = useState<any>([]);
 
-  const token = getCookie('token');
     useEffect(() => {
+      const token = getCookie('token');
       if(token){
         const fetchEntry = async () => {
           const result = await dataInventory.FindOne(token,computerName);
               
-          if(entry.statusCode === 500){
+          if(result.statusCode === 500){
               window.location.href = (`${appConfig.url}/dashboard/inventory`);
           }else{
               setEntry(result);
@@ -25,7 +25,7 @@ const InventoryComputerPage = ({params: {computerName}}: {params: {computerName:
         fetchEntry();
     }else{
       window.location.href = (`${appConfig.url}/login`);
-    }}, [token]);
+    }}, [computerName]);
 
     return (
       <InventoryView fields={ColumInventory} entry={entry}/>
