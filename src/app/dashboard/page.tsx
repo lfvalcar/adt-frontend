@@ -8,8 +8,6 @@ export const metadata: Metadata = {
 
 export default function DashboardPage() {
   return (
-    <section>
-      <h1>Grafana</h1>
-    </section>
+    <></>
   );
 }
