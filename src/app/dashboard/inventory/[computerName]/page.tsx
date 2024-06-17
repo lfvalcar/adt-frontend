@@ -16,7 +16,7 @@ const InventoryComputerPage = ({params: {computerName}}: {params: {computerName:
         const fetchEntry = async () => {
           const result = await dataInventory.FindOne(token,computerName);
               
-          if(result.statusCode === 500){
+          if(result.statusCode === 500 || result === null || result === '' || result === undefined){
               window.location.href = (`${appConfig.url}/dashboard/inventory`);
           }else{
               setEntry(result);
