@@ -29,7 +29,7 @@ interface Props {
     columns: IColumn[]
   }
 
-const INITIAL_VISIBLE_COLUMNS = ["ou", "description"];
+const INITIAL_VISIBLE_COLUMNS = ["ou", "description","actions"];
 
 export const OusTable:FC<Props> = ({rows, columns}) => {
   type Ou = typeof rows[0];

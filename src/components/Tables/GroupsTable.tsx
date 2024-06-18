@@ -29,7 +29,7 @@ interface Props {
     columns: IColumn[]
   }
 
-const INITIAL_VISIBLE_COLUMNS = ["cn", "ou", "description"];
+const INITIAL_VISIBLE_COLUMNS = ["cn", "ou", "description","actions"];
 
 export const GroupsTable:FC<Props> = ({rows, columns}) => {
   type Group = typeof rows[0];

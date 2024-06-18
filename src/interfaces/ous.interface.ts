@@ -21,6 +21,11 @@ export const ColumOu:IColumn[] = [
         key: "description",
         label: "Descripción",
         sortable: false
+    },
+    {
+        key: "actions",
+        label: "Acciones",
+        sortable: false
     }
 ];
 
