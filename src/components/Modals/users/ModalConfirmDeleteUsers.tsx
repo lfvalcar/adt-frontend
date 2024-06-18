@@ -16,7 +16,7 @@ export const ModalConfirmDeleteUsers = (selectedKeys: any) => {
         if (token) {
           const result = await dataUsers.delete(selectedUids, token);
           if(result != undefined){
-            window.location.href = ('http://formateya.es:3002/dashboard/users');
+            window.location.href = (`${appConfig.url}/dashboard/users`);
           }
         } else {
           window.location.href = (`${appConfig.url}/login`);
