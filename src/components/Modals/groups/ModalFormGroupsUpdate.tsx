@@ -4,7 +4,7 @@ import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDi
 import EditIcon from "@/public/Icons/EditIcon";
 import ModalTabsGroups from "@/components/Tabs/ModalTabsGroups";
 
-export const ModalFormUsersUpdate = (cn: any) => {
+export const ModalFormGroupsUpdate = (cn: any) => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   return (

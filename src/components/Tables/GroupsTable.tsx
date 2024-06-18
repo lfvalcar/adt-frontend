@@ -21,7 +21,7 @@ import { IGroup } from "@/interfaces/groups.interface";
 import { IColumn } from "@/interfaces/common.interface";
 import { ModalFormGroupsFilter } from "../Modals/groups/ModalFormGroupsFilter";
 import { ModalFormGroupsPost } from "../Modals/groups/ModalFormGroupsPost";
-import { ModalFormUsersUpdate } from "../Modals/groups/ModalFormGroupsUpdate";
+import { ModalFormGroupsUpdate } from "../Modals/groups/ModalFormGroupsUpdate";
 import { ModalConfirmDeleteGroups } from "../Modals/groups/ModalConfirmDeleteGroups";
 
 interface Props {
@@ -69,7 +69,7 @@ export const GroupsTable:FC<Props> = ({rows, columns}) => {
     switch (columnKey) {
         case "actions":
             return (
-              <ModalFormUsersUpdate group={group.cn}/>
+              <ModalFormGroupsUpdate group={group.cn}/>
             );
       default:
         return cellValue;
